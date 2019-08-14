@@ -13,9 +13,9 @@ export default class SearchBar extends Component {
               type="text"
               placeholder="holes" />
             <button type="submit">submit</button>
+          <FilterBar />
           </form>
         </fieldset>
-        <FilterBar />
       </div>
     )
   }

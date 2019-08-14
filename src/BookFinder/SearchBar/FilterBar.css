@@ -1,4 +1,6 @@
 .filterBarField {
   background-color: lightsteelblue;
   text-align: center;
+  box-sizing: border-box;
+  margin: 0px;
 }
