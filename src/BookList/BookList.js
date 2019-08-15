@@ -8,6 +8,15 @@ export default class BookList extends Component {
         <Book 
         bookInfo={this.props.bookInfo}
         />
+        <Book 
+        bookInfo={this.props.bookInfo}
+        />
+        <Book 
+        bookInfo={this.props.bookInfo}
+        />
+        <Book 
+        bookInfo={this.props.bookInfo}
+        />
       </>
     )
   }
