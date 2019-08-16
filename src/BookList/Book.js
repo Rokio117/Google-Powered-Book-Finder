@@ -21,11 +21,11 @@ export default class Book extends Component {
       <button onClick={this.handleExpand}>&#9660;</button>
     ) : (
       <>
-        <div className="price">Price:$ {this.props.bookInfo.cost}</div>
+        <div className="price">Price:$ {this.props.book.price}</div>
         <p className="description">
-          description: {this.props.bookInfo.description}
+          description: {this.props.book.description}
         </p>
-        <img className="bookImage" src={this.props.bookInfo.picture} alt="" />
+        <img className="bookImage" src={} alt="" />
         <button className="contractButton" onClick={this.handleContract}>
           &#9650;
         </button>

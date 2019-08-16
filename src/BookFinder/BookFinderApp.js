@@ -6,6 +6,7 @@ import FullHeader from './FullHeader/FullHeader';
 import Book from '../BookList/Book';
 import BookList from '../BookList/BookList';
 import { tsConstructorType } from '@babel/types';
+import Book from '../BookList/Book';
 
 export default class App extends Component {
   constructor(props) {
@@ -87,11 +88,14 @@ export default class App extends Component {
             price: item.saleInfo.retailPrice
               ? item.saleInfo.retailPrice.amount
               : 'sorry, we could not find a price for that.',
-            description: item.searchInfo.textSnippet
+            description: item.searchInfo
+              ? item.searchInfo.textSnippet
+              : 'sorry, we could not find a description for that'
           };
           return newObject;
         });
         console.log('new data=', newData);
+        this.setState({ newData });
       });
   };
 
@@ -106,7 +110,16 @@ export default class App extends Component {
           handleBookTypeChange={this.handleBookTypeChange}
           handleOptionChange={this.handleOptionChange}
         />
-        <BookList bookInfo={this.state.bookInfo} />
+        <BookList
+          bookInfo={this.state.bookInfo}
+          newData={
+            this.state.newData
+              ? this.state.newData.map(book => {
+                  <Book book={book} />;
+                })
+              : null
+          }
+        />
       </main>
     );
   }
