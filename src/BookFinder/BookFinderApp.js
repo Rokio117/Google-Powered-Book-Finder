@@ -6,7 +6,6 @@ import FullHeader from './FullHeader/FullHeader';
 import Book from '../BookList/Book';
 import BookList from '../BookList/BookList';
 import { tsConstructorType } from '@babel/types';
-import Book from '../BookList/Book';
 
 export default class App extends Component {
   constructor(props) {
@@ -112,13 +111,7 @@ export default class App extends Component {
         />
         <BookList
           bookInfo={this.state.bookInfo}
-          newData={
-            this.state.newData
-              ? this.state.newData.map(book => {
-                  <Book book={book} />;
-                })
-              : null
-          }
+          newData={this.state.newData ? this.state.newData : null}
         />
       </main>
     );
