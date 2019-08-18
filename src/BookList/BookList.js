@@ -3,6 +3,11 @@ import Book from './Book';
 
 export default class BookList extends Component {
   render() {
-    return <>{this.props.newData}</>;
+    console.log(this.props.NewData, 'newData in BookList');
+    // return <>{this.props.newData.map(book => {
+    //   return <Book book={book} />
+    // })}</>;
+    //}
+    return <div>Hi</div>;
   }
 }

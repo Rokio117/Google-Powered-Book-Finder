@@ -100,7 +100,17 @@ export default class App extends Component {
 
   render() {
     // console.log(this.handleSubmit, 'handle submit on APP');
-    console.log(this.state);
+    console.log(this.state, 'state in render');
+    this.state.newData
+      ? console.log('has newData')
+      : console.log('no new data');
+    const defaultBook = {
+      price: '',
+      description: '',
+      bookImage: '',
+      title: '',
+      author: ''
+    };
     return (
       <main className="App">
         <FullHeader
@@ -111,7 +121,7 @@ export default class App extends Component {
         />
         <BookList
           bookInfo={this.state.bookInfo}
-          newData={this.state.newData ? this.state.newData : null}
+          newData={this.state.newData ? this.state.newData : defaultBook}
         />
       </main>
     );

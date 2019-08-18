@@ -25,7 +25,7 @@ export default class Book extends Component {
         <p className="description">
           description: {this.props.book.description}
         </p>
-        <img className="bookImage" src={} alt="" />
+        <img className="bookImage" src={''} alt="" />
         <button className="contractButton" onClick={this.handleContract}>
           &#9650;
         </button>
