@@ -95,22 +95,28 @@ export default class App extends Component {
         });
         console.log('new data=', newData);
         this.setState({ newData });
+        this.setState({ displayBooks: true });
       });
   };
 
   render() {
     // console.log(this.handleSubmit, 'handle submit on APP');
     console.log(this.state, 'state in render');
+
     this.state.newData
       ? console.log('has newData')
       : console.log('no new data');
-    const defaultBook = {
-      price: '',
-      description: '',
-      bookImage: '',
-      title: '',
-      author: ''
-    };
+    const defaultBook = [
+      {
+        price: '',
+        description: '',
+        bookImage: '',
+        title: '',
+        author: ''
+      }
+    ];
+    const data = this.state.newData ? this.state.newData : defaultBook;
+    console.log(data, 'data');
     return (
       <main className="App">
         <FullHeader
@@ -119,10 +125,11 @@ export default class App extends Component {
           handleBookTypeChange={this.handleBookTypeChange}
           handleOptionChange={this.handleOptionChange}
         />
-        <BookList
-          bookInfo={this.state.bookInfo}
-          newData={this.state.newData ? this.state.newData : defaultBook}
-        />
+        {this.state.displayBooks ? (
+          <BookList bookInfo={this.state.bookInfo} newData={data} />
+        ) : (
+          <></>
+        )}
       </main>
     );
   }

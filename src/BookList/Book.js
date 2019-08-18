@@ -23,7 +23,7 @@ export default class Book extends Component {
       <>
         <div className="price">Price:$ {this.props.book.price}</div>
         <p className="description">
-          description: {this.props.book.description}
+          Description: {this.props.book.description}
         </p>
         <img className="bookImage" src={''} alt="" />
         <button className="contractButton" onClick={this.handleContract}>
@@ -33,9 +33,9 @@ export default class Book extends Component {
     );
 
     return (
-      <div className="book">
-        <h2 className="title">Title:</h2>
-        <p className="author">Author:</p>
+      <div className="book" key={this.props.book.bookNumber}>
+        <h2 className="title">Title: {this.props.book.title}</h2>
+        <p className="author">Author: {this.props.book.author}</p>
         {extraData}
       </div>
     );
